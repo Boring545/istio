@@ -46,6 +46,7 @@ read -ra DOCKER_RUN_OPTIONS <<< "${DOCKER_RUN_OPTIONS:-}"
     --rm \
     "${DOCKER_RUN_OPTIONS[@]}" \
     --init \
+    --privileged \
     --sig-proxy=true \
     ${DOCKER_SOCKET_MOUNT:--v /var/run/docker.sock:/var/run/docker.sock} \
     $CONTAINER_OPTIONS \
